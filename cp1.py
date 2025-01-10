@@ -1,3 +1,5 @@
+# Ask Me
+
 import os
 import streamlit as st
 from openai import OpenAI
@@ -11,6 +13,10 @@ st.markdown(
         margin: 0;
         font-family: Arial, sans-serif;
     }
+    .main .block-container { padding: 0rem; }
+
+    .main .block-container { padding-top: 0rem; }
+
     .navbar {
         overflow: hidden;
         margin-bottom:20px;
@@ -57,9 +63,9 @@ st.markdown(
 st.markdown(
     """
     <style>
-    header {visibility: hidden;}
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden !important;}
+    header {display: none;}
+    #MainMenu {display: none;}
+    footer {display: none !important;}
     footer, .stFooter {display: none !important;}
     div._container_gzau3_1 {display:none !important;}
     div._profileContainer_gzau3_53 {display:none !important;}
@@ -94,12 +100,13 @@ st.markdown(
             <a href="https://www.cancepro.com/">Go Home</a>
             <a href="https://canceprochat.streamlit.app/">Ask Me </a>
             <a href="https://canceproit.pythonanywhere.com/getxray">X-Ray Analysis</a>
-            <a href="https://canceproit.pythonanywhere.com/getliveanalysis">Cancer Records</a>
+            <a href="https://canceproit.pythonanywhere.com/getliveanalysis">Cancer Research</a>
         </div>
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # Show title and description.
@@ -136,8 +143,26 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+
+
+
+
+
+
 # Create a chat input field to allow the user to enter a message. This will display
 # automatically at the bottom of the page.
+st.markdown(
+    """
+    <style>
+        div.stTextInput > div > div > input {
+            margin-bottom:0px !important;
+            background-color: transparent; /* This removes the background color */ /* Or you can set a specific color: */ /* background-color: #ffffff; */
+        }
+    </style>
+        """,
+    unsafe_allow_html=True
+)
+
 if prompt := st.chat_input("What is up?"):
 
     # Store and display the current prompt.
@@ -154,7 +179,7 @@ if prompt := st.chat_input("What is up?"):
         ],
         stream=True,
     )
-
+   
     # Stream the response to the chat using `st.write_stream`, then store it in 
     # session state.
     with st.chat_message("assistant"):
@@ -162,29 +187,39 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 
+
+
+
+st.markdown(
+    """
+    <style>
+        .footer-note{
+            float:middle;
+            text-align:center;
+            display: block;
+            color: #48c6e0;
+            position:relative;
+            bottom:-380px;
+            text-decoration: none;
+        }
+        .footer-note a:hover {
+            color: black;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.markdown(
     """
     <div>
         <!-- Footer Area -->
-		<footer id="footer" class="footer ">
-			<!-- Footer Top -->
-			<!--/ End Footer Top -->
-			<!-- Copyright -->
-			<div class="copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-12">
-							<div class="copyright-content">
-								<p> © Copyright 2024  |  All Rights Reserved by <a href="#header">cancepro.com</a> </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Copyright -->
-		</footer>
-		<!--/ End Footer Area -->
+            <div class="footer-note">
+                <p> © Copyright 2024,2025  |  All Rights Reserved by <a href="https://www.cancepro.com/">cancepro.com</a> </p>			
+            </div>
+        <!--/ End Footer Area -->
     </div>
     """,
     unsafe_allow_html=True
 )
+
