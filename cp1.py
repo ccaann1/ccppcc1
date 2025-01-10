@@ -9,8 +9,9 @@ st.markdown(
     header {visibility: hidden;}
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    div._container_gzau3_1 {visibility:hidden;}
-    div._profileContainer_gzau3_53 {visibility:hidden;}
+    footer {display: none;}
+    div._container_gzau3_1 {display:none;}
+    div._profileContainer_gzau3_53 {display:none;}
     </style>
     """,
     unsafe_allow_html=True
