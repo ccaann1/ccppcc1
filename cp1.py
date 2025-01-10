@@ -110,7 +110,7 @@ st.markdown(
 # Show title and description.
 
 st.write(
-    "We have collected information from renowned known Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
+    "We have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
