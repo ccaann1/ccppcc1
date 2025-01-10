@@ -159,7 +159,7 @@ def read_file(file_path):
         return file.read()
 
 # Read the content from your text file (update the path as needed)
-file_content = read_file('hari.txt')
+file_content = read_file('Cancer_Information.txt')
 
 # Display the content from the text file as an initial message if it hasn't been added yet
 if file_content and not any(msg['role'] == 'assistant' and msg['content'] == file_content for msg in st.session_state.messages):
