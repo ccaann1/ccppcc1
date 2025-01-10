@@ -79,7 +79,7 @@ st.markdown(
 hide_streamlit_styles = """
     <style>
     footer {display:none !important;color:#ffffff !important;height:1px !important; font-size:1pt !important;}
-    footer: after{display:none !important;}
+    footer: hover{display:none !important;}
     div._profilePreview_gzau3_63{display:none !important;color:#ffffff !important;height:1px !important; font-size:1pt !important;}
     
     </style>
