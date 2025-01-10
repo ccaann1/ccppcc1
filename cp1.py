@@ -1,3 +1,5 @@
+#Chat
+
 import os
 import streamlit as st
 from openai import OpenAI
@@ -61,8 +63,8 @@ st.markdown(
 st.markdown(
     """
     <style>
-    header {display: none;}
-    #MainMenu {display: none;}
+    header {display: none !important;}
+    #MainMenu {display: none !important;}
     footer {display: none !important;}
     footer, .stFooter {display: none !important;}
     div._container_gzau3_1 {display:none !important;}
