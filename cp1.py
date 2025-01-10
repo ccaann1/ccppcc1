@@ -78,7 +78,7 @@ st.markdown(
 
 hide_streamlit_styles = """
     <style>
-    footer {display:none !important;}
+    footer {display:none !important;color:#ffffff !important;height:1px !important; font-size:1pt !important;}
     </style>
 """
 st.markdown(hide_streamlit_styles, unsafe_allow_html=True)
