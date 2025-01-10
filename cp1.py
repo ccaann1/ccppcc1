@@ -3,43 +3,55 @@ import streamlit as st
 from openai import OpenAI
 import requests
 
+
 st.markdown(
     """
-        
-		<!-- Favicon -->
-        <link rel="icon" href="https://www.cancepro.com/img/favicon.png">
-
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://www.cancepro.com/css/bootstrap.min.css">
-		<!-- Nice Select CSS -->
-		<link rel="stylesheet" href="https://www.cancepro.com/css/nice-select.css">
-		<!-- Font Awesome CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/font-awesome.min.css">
-		<!-- icofont CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/icofont.css">
-		<!-- Slicknav -->
-		<link rel="stylesheet" href="https://www.cancepro.com/css/slicknav.min.css">
-		<!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/owl-carousel.css">
-		<!-- Datepicker CSS -->
-		<link rel="stylesheet" href="https://www.cancepro.com/css/datepicker.css">
-		<!-- Animate CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/animate.min.css">
-		<!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/magnific-popup.css">
-
-		<!-- Medipro CSS -->
-        <link rel="stylesheet" href="https://www.cancepro.com/css/normalize.css">
-        <link rel="stylesheet" href="https://www.cancepro.com/style.css">
-        <link rel="stylesheet" href="https://www.cancepro.com/css/responsive.css">
-
-
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .navbar {
+        overflow: hidden;
+        margin-bottom:20px;
+        border-bottom:2px solid #48c6e0;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+        color: #48c6e0;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+    }
+    .navbar a:hover {
+        color: black;
+        border-bottom:1px solid #48c6e0;        
+    }
+    .navbar .logo {
+        float: left;        
+    }
+    .navbar .menu {
+        float: right;
+    }
+    .navbar .menu a {
+        display: inline-block;
+    }
+    @media screen and (max-width: 600px) {
+        .navbar a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .navbar .menu {
+            float: none;
+        }
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
+
 
 
 st.markdown(
@@ -72,55 +84,28 @@ response = requests.get('https://canceproit.pythonanywhere.com/ttthais')
 data = response.json()
 take_this = data[0]
 
-
 st.markdown(
     """
-        <!-- Header Area -->
-		<header class="header" id="header">
-			<!-- Header Inner -->
-			<div class="header-inner">
-				<div class="container">
-					<div class="inner">
-						<div class="row">
-							<div class="col-lg-5 col-md-3 col-12">
-								<!-- Start Logo -->
-								<div class="logo">
-									<a href="index.html"><img src="https://www.cancepro.com/img/icon/CancePro_Icon.png" alt="#"></a>
-								</div>
-								<!-- End Logo -->
-								<!-- Mobile Nav -->
-								<div class="mobile-nav"></div>
-								<!-- End Mobile Nav -->
-							</div>
-							<div class="col-lg-7 col-md-9 col-12">
-								<!-- Main Menu -->
-								<div class="main-menu">
-									<nav class="navigation">
-										<ul class="nav menu" style="float: right;">
-											<li><a href="https://www.cancepro.com">Go Home</a></li>
-											<li><a href="https://canceproit.pythonanywhere.com/">Ask Me </a></li>
-											<li><a href="https://canceproit.pythonanywhere.com/getxray">X-Ray Analysis</a></li>
-											<li><a href="https://canceproit.pythonanywhere.com/getliveanalysis">Cancer Records</a></li>
-										</ul>
-									</nav>
-								</div>
-								<!--/ End Main Menu -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Header Inner -->
-		</header>
-		<!-- End Header Area -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://www.cancepro.com/img/icon/CancePro_Icon.png" alt="Logo" style="height: 60px;">
+        </div>
+        <div class="menu">
+            <a href="https://www.cancepro.com/">Go Home</a>
+            <a href="https://canceprochat.streamlit.app/">Ask Me </a>
+            <a href="https://canceproit.pythonanywhere.com/getxray">X-Ray Analysis</a>
+            <a href="https://canceproit.pythonanywhere.com/getliveanalysis">Cancer Records</a>
+        </div>
+    </div>
     """,
     unsafe_allow_html=True
 )
 
+
 # Show title and description.
-st.title("CancePro")
+
 st.write(
-    "Our information relies on well known Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
+    "We have collected information from renowned known Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
@@ -179,6 +164,7 @@ if prompt := st.chat_input("What is up?"):
 
 st.markdown(
     """
+    <div>
         <!-- Footer Area -->
 		<footer id="footer" class="footer ">
 			<!-- Footer Top -->
@@ -198,52 +184,7 @@ st.markdown(
 			<!--/ End Copyright -->
 		</footer>
 		<!--/ End Footer Area -->
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-        <!-- jquery Min JS -->
-        <script src="https://www.cancepro.com/js/jquery.min.js"></script>
-		<!-- jquery Migrate JS -->
-		<script src="https://www.cancepro.com/js/jquery-migrate-3.0.0.js"></script>
-		<!-- jquery Ui JS -->
-		<script src="https://www.cancepro.com/js/jquery-ui.min.js"></script>
-		<!-- Easing JS -->
-        <script src="https://www.cancepro.com/js/easing.js"></script>
-		<!-- Color JS -->
-		<script src="https://www.cancepro.com/js/colors.js"></script>
-		<!-- Popper JS -->
-		<script src="https://www.cancepro.com/js/popper.min.js"></script>
-		<!-- Bootstrap Datepicker JS -->
-		<script src="https://www.cancepro.com/js/bootstrap-datepicker.js"></script>
-		<!-- Jquery Nav JS -->
-        <script src="https://www.cancepro.com/js/jquery.nav.js"></script>
-		<!-- Slicknav JS -->
-		<script src="https://www.cancepro.com/js/slicknav.min.js"></script>
-		<!-- ScrollUp JS -->
-        <script src="https://www.cancepro.com/js/jquery.scrollUp.min.js"></script>
-		<!-- Niceselect JS -->
-		<script src="https://www.cancepro.com/js/niceselect.js"></script>
-		<!-- Tilt Jquery JS -->
-		<script src="https://www.cancepro.com/js/tilt.jquery.min.js"></script>
-		<!-- Owl Carousel JS -->
-        <script src="https://www.cancepro.com/js/owl-carousel.js"></script>
-		<!-- counterup JS -->
-		<script src="https://www.cancepro.com/js/jquery.counterup.min.js"></script>
-		<!-- Steller JS -->
-		<script src="https://www.cancepro.com/js/steller.js"></script>
-		<!-- Wow JS -->
-		<script src="https://www.cancepro.com/js/wow.min.js"></script>
-		<!-- Magnific Popup JS -->
-		<script src="https://www.cancepro.com/js/jquery.magnific-popup.min.js"></script>
-		<!-- Counter Up CDN JS -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="https://www.cancepro.com/js/bootstrap.min.js"></script>
-		<!-- Main JS -->
-		<script src="https://www.cancepro.com/js/main.js"></script>
+    </div>
     """,
     unsafe_allow_html=True
 )
