@@ -8,11 +8,23 @@ st.markdown(
     <style>
     header {visibility: hidden;}
     #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    footer {display: none;}
-    div._container_gzau3_1 {display:none;}
-    div._profileContainer_gzau3_53 {display:none;}
+    footer {visibility: hidden !important;}
+    footer, .stFooter {display: none !important;}
+    div._container_gzau3_1 {display:none !important;}
+    div._profileContainer_gzau3_53 {display:none !important;}
     </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <script>
+    const footer = document.querySelector('footer');
+    if (footer) {
+        footer.style.display = 'none';
+    }
+    </script>
     """,
     unsafe_allow_html=True
 )
