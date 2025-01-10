@@ -128,6 +128,7 @@ os.environ["OPENAI_API_KEY"] = take_this
 api_key = take_this
 
 
+
 # Create an OpenAI client.
 client = OpenAI()
 
@@ -136,16 +137,24 @@ client = OpenAI()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Function to read content from a text file
+def read_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
+# Read the content from your text file (update the path as needed)
+file_content = read_file('hari.txt')
+
+# Display the content from the text file as an initial message if it hasn't been added yet
+if file_content and not any(msg['role'] == 'assistant' and msg['content'] == file_content for msg in st.session_state.messages):
+    st.session_state.messages.append({"role": "assistant", "content": file_content})
+
 # Display the existing chat messages via `st.chat_message`.
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-
-
-
-
-
+if len(st.session_state.messages) > 1:
+    for message in st.session_state.messages[1:]:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+            # st.markdown(message["content"])
 
 # Create a chat input field to allow the user to enter a message. This will display
 # automatically at the bottom of the page.
@@ -154,10 +163,10 @@ st.markdown(
     <style>
         div.stTextInput > div > div > input {
             margin-bottom:0px !important;
-            background-color: transparent; /* This removes the background color */ /* Or you can set a specific color: */ /* background-color: #ffffff; */
+            background-color: transparent; /* This removes the background color */
         }
     </style>
-        """,
+    """,
     unsafe_allow_html=True
 )
 
@@ -184,40 +193,35 @@ if prompt := st.chat_input("What is up?"):
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
+# st.markdown(
+#     """
+#     <style>
+#         .footer-note{
+#             float:middle;
+#             text-align:center;
+#             display: block;
+#             color: #48c6e0;
+#             position:relative;
+#             bottom:-150px;
+#             text-decoration: none;
+#         }
+#         .footer-note a:hover {
+#             color: black;
+#         }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
-
-
-
-st.markdown(
-    """
-    <style>
-        .footer-note{
-            float:middle;
-            text-align:center;
-            display: block;
-            color: #48c6e0;
-            position:relative;
-            bottom:-380px;
-            text-decoration: none;
-        }
-        .footer-note a:hover {
-            color: black;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <div>
-        <!-- Footer Area -->
-            <div class="footer-note">
-                <p> © Copyright 2024,2025  |  All Rights Reserved by <a href="https://www.cancepro.com/">cancepro.com</a> </p>			
-            </div>
-        <!--/ End Footer Area -->
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+# st.markdown(
+#     """
+#     <div>
+#         <!-- Footer Area -->
+#             <div class="footer-note">
+#                 <p> © Copyright 2024,2025  |  All Rights Reserved by <a href="https://www.cancepro.com/">cancepro.com</a> </p>			
+#             </div>
+#         <!--/ End Footer Area -->
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
