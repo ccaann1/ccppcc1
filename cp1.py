@@ -1,8 +1,16 @@
 import os
 import streamlit as st
 from openai import OpenAI
-
 import requests
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 
 response = requests.get('https://canceproit.pythonanywhere.com/ttthais')
 data = response.json()
@@ -68,16 +76,3 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 
-hide_streamlit_style = """ 
-
-<style> 
-
-footer {visibility: hidden;} 
-
-</style> 
-
-"""
-
-
-
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
