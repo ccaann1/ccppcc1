@@ -66,3 +66,18 @@ if prompt := st.chat_input("What is up?"):
     with st.chat_message("assistant"):
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+hide_streamlit_style = """ 
+
+<style> 
+
+footer {visibility: hidden;} 
+
+</style> 
+
+"""
+
+
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
