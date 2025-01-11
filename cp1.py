@@ -8,7 +8,7 @@ import requests
 
 # Function to check if the app is being accessed through an iframe
 def is_accessed_via_iframe():
-    referer = st.query_params().get("referer", [None])[0]
+    referer = st.experimental_get_query_params().get("referer", [None])[0]
     allowed_referer = "https://www.cancepro.com"  # Change this to your allowed domain
     return referer and referer.startswith(allowed_referer)
 
