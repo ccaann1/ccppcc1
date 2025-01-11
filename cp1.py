@@ -6,6 +6,20 @@ from openai import OpenAI
 import requests
 
 
+# Function to check if the app is being accessed through an iframe
+def is_accessed_via_iframe():
+    referer = st.experimental_get_query_params().get("referer", [None])[0]
+    allowed_referer = "https://www.cancepro.com"  # Change this to your allowed domain
+    return referer and referer.startswith(allowed_referer)
+
+# Check if accessed via iframe
+if not is_accessed_via_iframe():
+    st.error("Authentication failed, access our app through www.isha.cancepro.com.")
+    st.stop()
+
+
+
+
 st.markdown(
     """
     <style>
