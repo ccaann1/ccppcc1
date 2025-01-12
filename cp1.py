@@ -204,7 +204,7 @@ st.markdown(
 if prompt := st.chat_input("What is up?"):
     
     # Store and display the current prompt.
-    st.session_state.messages.append({"role": "user", "content": "Your name is Isha. You're built by CancePro company."+prompt})
+    st.session_state.messages.append({"role": "user", "content": "Your name is Isha. You're developed by a company named as CancePro. CancePro is derived from 2 different words, Cancer and Probability."+prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
