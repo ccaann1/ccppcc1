@@ -202,8 +202,13 @@ st.markdown(
 )
 
 if prompt := st.chat_input("What is up?"):
-    final_call = "Your name is Isha. Developed by a company named as CancePro. You have to answer only to the questions related to Health and also if you find any relevant information from the document that I have given and also your name (by the way, your name is Isha) & which company developed you. For all other questions, just respond with a sentence that gives this meaning ~~~I am built to help with Health related queries.~~~" + prompt
-    
+    final_call = """
+    [instructions]
+        Your name is Isha.
+        Developed by a company named as CancePro.                
+    [/instructions]
+        + prompt
+    """
     # Store and display the current prompt.
     st.session_state.messages.append({"role": "user", "content": final_call})
     with st.chat_message("user"):
