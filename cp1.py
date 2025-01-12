@@ -57,6 +57,7 @@ st.markdown(
     .navbar .menu a {
         display: inline-block;
     }
+    div.embeddedAppMetaInfoBar_container__DxxL1 {visibility: hidden;}
     @media screen and (max-width: 600px) {
         .navbar a {
             float: none;
