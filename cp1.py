@@ -202,9 +202,15 @@ st.markdown(
 )
 
 if prompt := st.chat_input("What is up?"):
-
+    final_call = """
+        You're a conversational chatbot names as Isha, developed by company name Cancepro. You have to answer only to the questions related to Health and also if you find any relevant information from the document that I have given and also your name (by the way, your name is Isha) & which company developed you. For all other questions, just respond with a sentence that gives this meaning ~~~I am built to help with Health related queries.~~~
+        +
+        prompt
+        
+    """
+    
     # Store and display the current prompt.
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "user", "content": final_call})
     with st.chat_message("user"):
         st.markdown(prompt)
 
@@ -212,7 +218,7 @@ if prompt := st.chat_input("What is up?"):
     stream = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": m["You're a conversational chatbot names as Isha, developed by company name Cancepro. You have to answer only to the questions related to Health and also if you find any relevant information from the document that I have given and also your name (by the way, your name is Isha) & which company developed you. For all other questions, just respond with a sentence that gives this meaning ~~~I am built to help with Health related queries.~~~"], m["role"], "content": m["content"]}
+            {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
         ],
         stream=True,
