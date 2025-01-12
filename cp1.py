@@ -206,8 +206,17 @@ if prompt := st.chat_input("What is up?"):
     [instructions]
         Your name is Isha.
         Developed by a company named as CancePro.                
+        You can use the knowledge you have already.
     [/instructions]
-        + prompt
+
+    [data]
+    {file_content}
+    [/data]
+
+    
+    [user_question]
+    {prompt}
+    [/user_question]
     """
     # Store and display the current prompt.
     st.session_state.messages.append({"role": "user", "content": final_call})
