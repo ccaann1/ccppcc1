@@ -116,7 +116,7 @@ st.write(
     "Hi, I am Isha!!!"
 )
 
-st.write("A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information and be Healthy by taking precautions.")
+st.write("A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents. Ask a question in the below box, get relevant information and be Healthy by taking precautions.")
 
 # Ask user for their OpenAI API key via `st.text_input`.
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
