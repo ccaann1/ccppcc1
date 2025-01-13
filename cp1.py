@@ -119,29 +119,12 @@ response = requests.get('https://canceproit.pythonanywhere.com/ttthais')
 data = response.json()
 take_this = data[0]
 
-st.markdown(
-    """
-    <div class="navbar">
-        <div class="logo">
-            <img src="https://www.cancepro.com/img/icon/CancePro_Icon.png" alt="Logo" style="height: 60px;">
-        </div>
-        <div class="menu">
-            <a href="https://www.cancepro.com/">Go Home</a>
-            <a href="#">Ask Me </a>
-            <a href="https://canceproxr.streamlit.app/">X-Ray Analysis</a>
-            <a href="https://canceproresearch.streamlit.app/">Cancer Research</a>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 
 
 # Show title and description.
 
 st.write(
-    "We have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
+    "Hi, I am Isha!!! A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
