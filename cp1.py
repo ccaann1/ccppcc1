@@ -235,15 +235,15 @@ if prompt := st.chat_input("What is up?"):
 st.markdown(
     """
         <div class="container" style="color:#ffffff;">
-            html(my_ht)
+            html(
+            <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
+            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>        
+            )
         </div>
     """
     
 )
 
-my_ht = f"<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>
-"
 
 # st.markdown(
 #     """
