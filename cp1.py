@@ -4,6 +4,7 @@ import os
 import streamlit as st
 from openai import OpenAI
 import requests
+from streamlit.components.v1 import html
 
 
 # # Function to check if the app is being accessed through an iframe
@@ -234,12 +235,15 @@ if prompt := st.chat_input("What is up?"):
 st.markdown(
     """
         <div class="container" style="color:#ffffff;">
-            <a href='https://www.free-counters.org/'>www.free-Counter.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
-            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>
+            html(my_ht)
         </div>
     """
     
 )
+
+my_ht = f"<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>
+"
 
 # st.markdown(
 #     """
