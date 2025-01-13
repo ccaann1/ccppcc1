@@ -124,8 +124,10 @@ take_this = data[0]
 # Show title and description.
 
 st.write(
-    "Hi, I am Isha!!! A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information."
+    "Hi, I am Isha!!!"
 )
+
+st.write("A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents that are publicly available. Ask a question in the below box, get relevant information.")
 
 # Ask user for their OpenAI API key via `st.text_input`.
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
