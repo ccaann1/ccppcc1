@@ -209,14 +209,6 @@ if prompt := st.chat_input("What is up?"):
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-st.markdown(
-    """
-        <a href='https://www.free-counters.org/'>www.free-Counter.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
-        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>
-
-    """
-    
-)
 
 # st.markdown(
 #     """
@@ -237,6 +229,17 @@ st.markdown(
 #     """,
 #     unsafe_allow_html=True
 # )
+
+
+st.markdown(
+    """
+        <div class="container" style="color:#ffffff;">
+            <a href='https://www.free-counters.org/'>www.free-Counter.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
+            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>
+        </div>
+    """
+    
+)
 
 # st.markdown(
 #     """
