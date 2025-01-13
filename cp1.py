@@ -4,19 +4,7 @@ import os
 import streamlit as st
 from openai import OpenAI
 import requests
-from streamlit.components.v1 import html
 
-
-# # Function to check if the app is being accessed through an iframe
-# def is_accessed_via_iframe():
-#     referer = st.experimental_get_query_params().get("referer", [None])[0]
-#     allowed_referer = "https://www.isha.cancepro.com"  # Change this to your allowed domain
-#     return referer and referer.startswith(allowed_referer)
-
-# # Check if accessed via iframe
-# if not is_accessed_via_iframe():
-#     st.error("Authentication failed, access our app through www.isha.cancepro.com.")
-#     st.stop()
 
 
 
@@ -230,19 +218,6 @@ if prompt := st.chat_input("What is up?"):
 #     """,
 #     unsafe_allow_html=True
 # )
-
-
-st.markdown(
-    """
-        <div class="container" style="color:#ffffff;">
-            html(
-            <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=d1f440dd0bc49f0c9c098f7923af43c14beb32b9'></script>
-            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1286954/t/0"></script>        
-            )
-        </div>
-    """
-    
-)
 
 
 # st.markdown(
