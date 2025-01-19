@@ -7,7 +7,7 @@ import os
 import streamlit as st
 from openai import OpenAI
 import requests
-import pyttsx3
+import pyttsx
 
 import io
 from audio_recorder_streamlit import audio_recorder
@@ -17,7 +17,7 @@ showErrorDetails = False
 
 
 listener = speech.Recognizer()
-machine = pyttsx3.init()
+machine = pyttsx.init()
 
 voices = machine.getProperty('voices')
 # Change to female voice
