@@ -260,13 +260,13 @@ def bars():
             icon_name="microphone",
             icon_size="2x",
             )
-        if audio_bytes:
-            # st.write("Prompt taken thru voice...")
-            audio_file = io.BytesIO(audio_bytes)
-            recognizer = speech.Recognizer()
-            with speech.AudioFile(audio_file) as source:
-                audio_data = recognizer.record(source)  # Read the entire audio file
-                prompt = recognizer.recognize_google(audio_data).lower()
+            if audio_bytes:
+                # st.write("Prompt taken thru voice...")
+                audio_file = io.BytesIO(audio_bytes)
+                recognizer = speech.Recognizer()
+                with speech.AudioFile(audio_file) as source:
+                    audio_data = recognizer.record(source)  # Read the entire audio file
+                    prompt = recognizer.recognize_google(audio_data).lower()
 
         except:
             st.write("Click on Mic Symbol to Talk With Isha.")
