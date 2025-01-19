@@ -236,7 +236,8 @@ st.markdown(
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 color:#ffffff;
-                position: absolute;
+                position: fixed;
+                margin-bottom:0%;
                 margin-top: 100%;
                 /* margin-left: -100px;
             }
