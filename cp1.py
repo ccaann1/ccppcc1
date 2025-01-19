@@ -173,7 +173,6 @@ st.markdown(
                 -webkit-box-align: stretch;
                 align-items: stretch;
                 # gap: 0.1rem;
-                position: fixed;
                 width: 95%;
                 height:110px;
                 padding-right:7px;
@@ -182,7 +181,8 @@ st.markdown(
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 # color:#ffffff;
-                margin-top: 66%;
+                position: absolute;
+                bottom: 4%;
                 /* margin-left: -100px;
             }
         }
@@ -197,7 +197,6 @@ st.markdown(
                 -webkit-box-align: stretch;
                 align-items: stretch;
                 # gap: 0.1rem;
-                position: fixed;
                 width: 95%;
                 height:110px;
                 padding-right:7px;
@@ -206,7 +205,8 @@ st.markdown(
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 # color:#ffffff;
-                margin-top: 70% !important;
+                position: absolute;
+                bottom: 4%;
                 /* margin-left: -100px;
             }
         }
@@ -222,7 +222,6 @@ st.markdown(
                 -webkit-box-align: stretch;
                 align-items: stretch;
                 # gap: 0.1rem;
-                position: fixed;
                 width: 95%;
                 height:110px;
                 padding-right:7px;
@@ -231,7 +230,8 @@ st.markdown(
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 # color:#ffffff;
-                margin-top: 36%;
+                position: absolute;
+                bottom: 4%;
                 /* margin-left: -100px;
             }
         }
