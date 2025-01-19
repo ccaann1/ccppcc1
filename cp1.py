@@ -219,7 +219,7 @@ st.markdown(
 
         /* Desktops */
         @media (min-width: 769px) {
-            .stHorizontalBlock{
+            .stHorizontalBlock.st-emotion-cache-ocqkz7{
                 position: fixed;
                 margin-top: 28%;
                 background-color: #ff4b4b;
