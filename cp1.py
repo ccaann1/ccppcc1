@@ -250,7 +250,7 @@ st.markdown(
 
 def bars():
     col1, col2 = st.columns([9, 1])
-    with col1: prompt = st.chat_input(placeholder="Type Your Question Here or Use Microphone To Tell Through Voice.")
+    with col1: prompt = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
     with col2:
         try:
             audio_bytes = audio_recorder(
