@@ -172,6 +172,7 @@ st.markdown(
             height: 100px;
             padding-top: 2%;
             width:55%;
+            color:#ffffff;
             z-index: 9999;
             padding-right: 10px;
             padding-left: 10px;
