@@ -155,43 +155,111 @@ st.markdown(
             # background-color: #ab2f2f !important;
         }
 
-        .st-emotion-cache-ocqkz7{
-            z-index:9999;
-            display: flex;
-            flex-wrap: wrap;
-            -webkit-box-flex: 1;
-            flex-grow: 1;
-            -webkit-box-align: stretch;
-            align-items: stretch;
-            # gap: 0.1rem;
-            position: fixed;
-            width: 50%;
-            height:110px;
-            padding-right:7px;
-            padding-left:7px;
-            padding-top:20px;
-            # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
-            background-color: #ffffff !important;
-            # color:#ffffff;
-            margin-top: 36%;
-            /* margin-left: -100px;
-        }
-        @media screen and (max-width: 600px) {
-            .st-emotion-cache-ocqkz7{
-                width: 90%;
-                height:60px;
-                padding-right:2px;
-                padding-left:2px;
-                padding-top:10px;
-                # color:#ffffff;
-                margin-top: 56%;                
-            }
-
-        }
         .st-emotion-cache-1vk188h {background-color: rgb(171 47 47) !important; }
 
         .st-c3 {background:#ab2f2f; background-color: #ab2f2f !important;}
 
+        
+        
+
+        /* Smartphones (portrait) */
+        @media (max-width: 480px) {
+            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
+                z-index:9999;
+                display: flex;
+                flex-wrap: wrap;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                -webkit-box-align: stretch;
+                align-items: stretch;
+                # gap: 0.1rem;
+                position: fixed;
+                width: 95%;
+                height:110px;
+                padding-right:7px;
+                padding-left:7px;
+                padding-top:20px;
+                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+                background-color: #ffffff !important;
+                # color:#ffffff;
+                margin-top: 56%;
+                /* margin-left: -100px;
+            }
+        }
+
+        /* Tablets (portrait) */
+        @media (max-width: 480px) {
+            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
+                z-index:9999;
+                display: flex;
+                flex-wrap: wrap;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                -webkit-box-align: stretch;
+                align-items: stretch;
+                # gap: 0.1rem;
+                position: fixed;
+                width: 95%;
+                height:110px;
+                padding-right:7px;
+                padding-left:7px;
+                padding-top:20px;
+                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+                background-color: #ffffff !important;
+                # color:#ffffff;
+                margin-top: 85%;
+                /* margin-left: -100px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
+                z-index:9999;
+                display: flex;
+                flex-wrap: wrap;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                -webkit-box-align: stretch;
+                align-items: stretch;
+                # gap: 0.1rem;
+                position: fixed;
+                width: 95%;
+                height:110px;
+                padding-right:7px;
+                padding-left:7px;
+                padding-top:20px;
+                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+                background-color: #ffffff !important;
+                # color:#ffffff;
+                margin-top: 70% !important;
+                /* margin-left: -100px;
+            }
+        }
+
+        /* Desktops */
+        @media (min-width: 769px) {
+            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
+                z-index:9999;
+                display: flex;
+                flex-wrap: wrap;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                -webkit-box-align: stretch;
+                align-items: stretch;
+                # gap: 0.1rem;
+                position: fixed;
+                width: 95%;
+                height:110px;
+                padding-right:7px;
+                padding-left:7px;
+                padding-top:20px;
+                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+                background-color: #ffffff !important;
+                # color:#ffffff;
+                margin-top: 36%;
+                /* margin-left: -100px;
+            }
+        }
 
     </style>
     """,
@@ -258,3 +326,4 @@ if prompt := bars():
     with st.chat_message("assistant"):
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
+
