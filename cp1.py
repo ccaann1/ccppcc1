@@ -238,7 +238,7 @@ st.markdown(
                 color:#ffffff;
                 position: fixed;
                 # margin-bottom:0%;
-                margin-top: 30%;
+                margin-top: 30% !important;
                 /* margin-left: -100px;
             }
         }
