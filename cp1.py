@@ -243,12 +243,18 @@ st.markdown(
         }
 
         .st-emotion-cache-ocqkz7 {
+          z-index:9999;
           display: flex;
           flex-wrap: wrap;
           -webkit-box-flex: 1;
           flex-grow: 1;
           -webkit-box-align: stretch;
           align-items: stretch;
+          # gap: 0.1rem;
+          width: 95%;
+          height:110px;
+          padding-right:7px;
+          padding-left:7px;
           gap: 1rem;
           margin-top: 31%;
           position: fixed;
