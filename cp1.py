@@ -180,7 +180,7 @@ st.markdown(
                 padding-top:20px;
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
-                # color:#ffffff;
+                color:#ffffff;
                 position: absolute;
                 margin-top: 120%;
                 /* margin-left: -100px;
@@ -204,7 +204,7 @@ st.markdown(
                 padding-top:20px;
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
-                # color:#ffffff;
+                color:#ffffff;
                 position: absolute;
                 margin-bottom: -24%;
                 /* margin-left: -100px;
@@ -229,7 +229,7 @@ st.markdown(
                 padding-top:20px;
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
-                # color:#ffffff;
+                color:#ffffff;
                 position: absolute;
                 margin-bottom: -24%;
                 /* margin-left: -100px;
