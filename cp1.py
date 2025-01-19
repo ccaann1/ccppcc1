@@ -252,9 +252,12 @@ st.markdown(
 
 def bars():
     col1, col2 = st.columns([9, 1])
+    prompt.clear()
     with col1: prompt = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
     with col2:
         try:
+            audio_data.clear()
+          
             audio_bytes = audio_recorder(
             text="",
             recording_color="red",
@@ -269,7 +272,8 @@ def bars():
                 with speech.AudioFile(audio_file) as source:
                     audio_data = recognizer.record(source)  # Read the entire audio file
                     prompt = recognizer.recognize_google(audio_data).lower()
-
+            audio_data.clear()
+          
         except:
             st.write("Click on Mic Symbol to Talk With Isha.")
     return prompt
