@@ -168,7 +168,7 @@ st.markdown(
 
         .stHorizontalBlock.st-emotion-cache-ocqkz7{
             position: fixed;
-            margin-top: 20%;
+            margin-top: 23%;
             background-color: #6c0606;
             height: 100px;
             padding-top: 2%;
@@ -200,7 +200,7 @@ st.markdown(
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
-                margin-top: 73%;
+                margin-top: 75%;
                 /* margin-left: -100px;
             }
         }
@@ -233,7 +233,7 @@ st.markdown(
         @media (min-width: 769px) {
             .stHorizontalBlock.st-emotion-cache-ocqkz7{
                 position: fixed;
-                margin-top: 10%;
+                margin-top: 13%;
                 background-color: #ff4b4b;
                 height: 100px;
                 padding-top: 2%;
