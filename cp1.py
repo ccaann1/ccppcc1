@@ -257,7 +257,7 @@ def bars():
     with col2:
         try:
             # audio_data.clear()
-          
+            audio_bytes = None
             audio_bytes = audio_recorder(
             text="",
             recording_color="red",
@@ -316,9 +316,9 @@ if prompt := bars():
     # session state.
     with st.chat_message("assistant"):
       response = st.write_stream(stream)
-      prompt.clear()
+      # prompt.clear()
       
         
     st.session_state.messages.append({"role": "assistant", "content": response})
-prompt.clear()
-del prompt
+# prompt.clear()
+# del prompt
