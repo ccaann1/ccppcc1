@@ -253,6 +253,7 @@ st.markdown(
 def bars():
     col1, col2 = st.columns([9, 1])
     # prompt.clear()
+    prompt = None
     with col1: prompt = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
     with col2:
         try:
