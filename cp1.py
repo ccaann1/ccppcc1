@@ -242,6 +242,18 @@ st.markdown(
             }
         }
 
+        .st-emotion-cache-ocqkz7 {
+          display: flex;
+          flex-wrap: wrap;
+          -webkit-box-flex: 1;
+          flex-grow: 1;
+          -webkit-box-align: stretch;
+          align-items: stretch;
+          gap: 1rem;
+          margin-top: 31%;
+          position: fixed;
+        }
+
     </style>
     """,
     unsafe_allow_html=True
