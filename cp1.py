@@ -319,10 +319,12 @@ if prompt := bars():
       response = st.write_stream(stream)
       # prompt.clear()
 
-  st.write("   ")
-  st.write("   ")
-  st.write("   ")
+      st.write("   ")
     
+      st.write("   ")
+    
+      st.write("   ")
+        
     st.session_state.messages.append({"role": "assistant", "content": response})
 # prompt.clear()
 # del prompt
