@@ -281,18 +281,18 @@ def bars():
 
 
   
-st.markdown("""
-    <style>
-        [data-testid="column"]:nth-child(1){
-            background-color: none;
-        }
+# st.markdown("""
+#     <style>
+#         [data-testid="column"]:nth-child(1){
+#             background-color: none;
+#         }
             
-        [data-testid="column"]:nth-child(2){
-            background-color: none;
-        }
-    </style>
-    """, unsafe_allow_html=True
-)
+#         [data-testid="column"]:nth-child(2){
+#             background-color: none;
+#         }
+#     </style>
+#     """, unsafe_allow_html=True
+# )
 
 if prompt := bars():
   # if detect(prompt) == "en": 
