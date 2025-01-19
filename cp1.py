@@ -322,6 +322,11 @@ if prompt := bars():
       st.write("   ")
     
       st.write("   ")
+      st.write("   ")
+      st.write("   ")
+      st.write("   ")
+      st.write("   ")
+      st.write("   ")
     
       st.write("   ")
         
