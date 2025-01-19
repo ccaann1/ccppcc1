@@ -182,32 +182,7 @@ st.markdown(
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 # color:#ffffff;
-                margin-top: 56%;
-                /* margin-left: -100px;
-            }
-        }
-
-        /* Tablets (portrait) */
-        @media (max-width: 480px) {
-            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
-                z-index:9999;
-                display: flex;
-                flex-wrap: wrap;
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                -webkit-box-align: stretch;
-                align-items: stretch;
-                # gap: 0.1rem;
-                position: fixed;
-                width: 95%;
-                height:110px;
-                padding-right:7px;
-                padding-left:7px;
-                padding-top:20px;
-                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
-                background-color: #ffffff !important;
-                # color:#ffffff;
-                margin-top: 85%;
+                margin-top: 66%;
                 /* margin-left: -100px;
             }
         }
