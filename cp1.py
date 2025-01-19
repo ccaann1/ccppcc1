@@ -5,7 +5,11 @@ import streamlit as st
 from openai import OpenAI
 import requests
 
+import io
+from audio_recorder_streamlit import audio_recorder
+import speech_recognition as speech
 
+listener = speech.Recognizer()
 
 
 
@@ -46,7 +50,6 @@ st.markdown(
     .navbar .menu a {
         display: inline-block;
     }
-    
     @media screen and (max-width: 600px) {
         .navbar a {
             float: none;
@@ -57,16 +60,7 @@ st.markdown(
             float: none;
         }
     }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
-
-st.markdown(
-    """
-    <style>
+    
     header {display: none !important;}
     #MainMenu {display: none !important;}
     footer {display: none !important;}
@@ -104,11 +98,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-response = requests.get('https://canceproitt.pythonanywhere.com/takehere')
+response = requests.get('https://canceproit.pythonanywhere.com/ttthais')
 data = response.json()
 take_this = data[0]
-
-
 
 # Show title and description.
 
@@ -118,17 +110,8 @@ st.write(
 
 st.write("A Conversational ChatBot built by CancePro. As a part of our Research we have collected information from renowned Cancer research institutes research documents. Ask a question in the below box, get relevant information and be Healthy by taking precautions.")
 
-# Ask user for their OpenAI API key via `st.text_input`.
-# Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
-# via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
-# openai_api_key = st.text_input("OpenAI API Key", type="password")
-# Setting the API key
 
-# st.write(
-#     "Has environment variables been set:",
-#     os.environ["OPENAI_API_KEY"] == st.secrets["abcd_keyyy"]
-# )
-# st.write(st.secrets["abcd_keyyy"])
+
 os.environ["OPENAI_API_KEY"] = take_this
 api_key = take_this
 
@@ -167,21 +150,87 @@ st.markdown(
     """
     <style>
         div.stTextInput > div > div > input {
-            margin-bottom:0px !important;
-            background-color: transparent; /* This removes the background color */
+            # margin-bottom:0px !important;
+            color:#ffffff;
+            # background-color: #ab2f2f !important;
         }
+
+        .st-emotion-cache-ocqkz7{
+            z-index:9999;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            -webkit-box-align: stretch;
+            align-items: stretch;
+            # gap: 0.1rem;
+            position: fixed;
+            width: 50%;
+            height:110px;
+            padding-right:7px;
+            padding-left:7px;
+            padding-top:20px;
+            # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+            background-color: #ffffff !important;
+            # color:#ffffff;
+            margin-top: 36%;
+            /* margin-left: -100px;
+        }
+        .st-emotion-cache-1vk188h {background-color: rgb(171 47 47) !important; }
+
+        .st-c3 {background:#ab2f2f; background-color: #ab2f2f !important;}
+
+
     </style>
     """,
     unsafe_allow_html=True
 )
 
-if prompt := st.chat_input("What is up?"):
-    
+
+def bars():
+    col1, col2 = st.columns([9, 1])
+    with col1: prompt = st.chat_input(placeholder="Type Your Question Here or Use Microphone To Tell Through Voice.")
+    with col2:
+        audio_bytes = audio_recorder(
+            text="",
+            recording_color="red",
+            neutral_color="green",
+            icon_name="microphone",
+            icon_size="2x",
+            )
+        if audio_bytes:
+            # st.write("Prompt taken thru voice...")
+            audio_file = io.BytesIO(audio_bytes)
+            recognizer = speech.Recognizer()
+            with speech.AudioFile(audio_file) as source:
+                audio_data = recognizer.record(source)  # Read the entire audio file
+                prompt = recognizer.recognize_google(audio_data).lower()
+                
+    return prompt
+
+
+st.markdown("""
+    <style>
+        [data-testid="column"]:nth-child(1){
+            background-color: none;
+        }
+            
+        [data-testid="column"]:nth-child(2){
+            background-color: none;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+
+
+if prompt := bars():
     # Store and display the current prompt.
-    st.session_state.messages.append({"role": "user", "content": "Your name is Isha. You should not tell who developed or built you."+prompt})
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
     with st.chat_message("user"):
         st.markdown(prompt)
-
+        
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
         model="gpt-4o",
@@ -197,38 +246,3 @@ if prompt := st.chat_input("What is up?"):
     with st.chat_message("assistant"):
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-# st.markdown(
-#     """
-#     <style>
-#         .footer-note{
-#             float:middle;
-#             text-align:center;
-#             display: block;
-#             color: #48c6e0;
-#             position:relative;
-#             bottom:-150px;
-#             text-decoration: none;
-#         }
-#         .footer-note a:hover {
-#             color: black;
-#         }
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
-
-
-# st.markdown(
-#     """
-#     <div>
-#         <!-- Footer Area -->
-#             <div class="footer-note">
-#                 <p> © Copyright 2024,2025  |  All Rights Reserved by <a href="https://www.cancepro.com/">cancepro.com</a> </p>			
-#             </div>
-#         <!--/ End Footer Area -->
-#     </div>
-#     """,
-#     unsafe_allow_html=True
-# )
