@@ -182,7 +182,7 @@ st.markdown(
                 background-color: #ffffff !important;
                 # color:#ffffff;
                 position: absolute;
-                margin-bottom: -10%;
+                margin-top: 70%;
                 /* margin-left: -100px;
             }
         }
