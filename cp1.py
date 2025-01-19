@@ -219,46 +219,16 @@ st.markdown(
 
         /* Desktops */
         @media (min-width: 769px) {
-            .st-emotion-cache-ocqkz7{
-                z-index:9999;
-                display: flex;
-                flex-wrap: wrap;
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                -webkit-box-align: stretch;
-                align-items: stretch;
-                # gap: 0.1rem;
-                width: 95%;
-                height:110px;
-                padding-right:7px;
-                padding-left:7px;
-                padding-top:20px;
-                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
-                background-color: #ffffff !important;
-                color:#ffffff;
+            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
                 position: fixed;
-                margin-top: 70%;
-                /* margin-left: -100px;
+                margin-top: 28%;
+                background-color: #ff4b4b;
+                height: 100px;
+                padding-top: 2%;
+                z-index: 9999;
+                padding-right: 10px;
+                padding-left: 10px;
             }
-        }
-
-        .st-emotion-cache-ocqkz7 {
-            z-index:9999;
-            display: flex;
-            flex-wrap: wrap;
-            -webkit-box-flex: 1;
-            flex-grow: 1;
-            -webkit-box-align: stretch;
-            align-items: stretch;
-            # gap: 0.1rem;
-            width: 95%;
-            height:110px;
-            padding-right:7px;
-            padding-left:7px;
-            gap: 1rem;
-            margin-top: 60%;
-            position: fixed;
-        }
         
     </style>
     """,
