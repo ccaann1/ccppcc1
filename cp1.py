@@ -219,7 +219,7 @@ st.markdown(
 
         /* Desktops */
         @media (min-width: 769px) {
-            .stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0{
+            .st-emotion-cache-ocqkz7{
                 z-index:9999;
                 display: flex;
                 flex-wrap: wrap;
@@ -237,8 +237,8 @@ st.markdown(
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
-                margin-bottom:0%;
-                margin-top: 150%;
+                # margin-bottom:0%;
+                margin-top: 30%;
                 /* margin-left: -100px;
             }
         }
