@@ -178,7 +178,13 @@ st.markdown(
         }
         @media screen and (max-width: 600px) {
             .st-emotion-cache-ocqkz7{
-                width:95%;
+                width: 90%;
+                height:60px;
+                padding-right:2px;
+                padding-left:2px;
+                padding-top:10px;
+                # color:#ffffff;
+                margin-top: 56%;                
             }
 
         }
