@@ -311,10 +311,13 @@ if prompt := bars():
       # Stream the response to the chat using `st.write_stream`, then store it in 
       # session state.
       with st.chat_message("assistant"):
-          response = st.write_stream(stream)
-          del prompt
+        response = st.write_stream(stream)
+        prompt.clear()
+        
           
       st.session_state.messages.append({"role": "assistant", "content": response})
-
+  prompt.clear()
+  del prompt
+  
 else:
   st.write("Please click refresh & give only English prompt either by Typing or through Voice.")
