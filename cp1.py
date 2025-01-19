@@ -167,7 +167,7 @@ st.markdown(
 
         .stHorizontalBlock.st-emotion-cache-ocqkz7{
             position: fixed;
-            margin-top: 36%;
+            margin-top: 20%;
             background-color: #6c0606;
             height: 100px;
             padding-top: 2%;
@@ -199,7 +199,7 @@ st.markdown(
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
-                margin-top: 120%;
+                margin-top: 30%;
                 /* margin-left: -100px;
             }
         }
@@ -223,7 +223,7 @@ st.markdown(
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
-                margin-top: 80%;
+                margin-top: 30%;
                 /* margin-left: -100px;
             }
         }
@@ -232,7 +232,7 @@ st.markdown(
         @media (min-width: 769px) {
             .stHorizontalBlock.st-emotion-cache-ocqkz7{
                 position: fixed;
-                margin-top: 28%;
+                margin-top: 10%;
                 background-color: #ff4b4b;
                 height: 100px;
                 padding-top: 2%;
