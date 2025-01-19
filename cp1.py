@@ -7,6 +7,7 @@ import os
 import streamlit as st
 from openai import OpenAI
 import requests
+import pyttsx3
 
 import io
 from audio_recorder_streamlit import audio_recorder
@@ -16,6 +17,17 @@ showErrorDetails = False
 
 
 listener = speech.Recognizer()
+machine = pyttsx3.init()
+
+voices = machine.getProperty('voices')
+# Change to female voice
+machine.setProperty('voice', voices[0].id)
+# Slow down the speed rate of voice
+machine.setProperty('rate',180)
+
+def talk(asked):
+    machine.say(asked)
+    machine.runAndWait()
 
 
 
@@ -293,6 +305,7 @@ if prompt := bars():
 
     with st.chat_message("user"):
         st.markdown(prompt)
+        talk("Question asked is ",prompt)
         
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
@@ -308,5 +321,6 @@ if prompt := bars():
     # session state.
     with st.chat_message("assistant"):
         response = st.write_stream(stream)
+        talk("Answer is ",response)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
