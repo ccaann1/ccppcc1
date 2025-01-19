@@ -199,7 +199,7 @@ st.markdown(
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
-                margin-top: 50%;
+                margin-top: 70%;
                 /* margin-left: -100px;
             }
         }
