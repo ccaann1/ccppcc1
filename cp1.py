@@ -275,24 +275,22 @@ def bars():
     return prompt
 
 
-if detect(prompt) == "en": 
   
-  st.markdown("""
-      <style>
-          [data-testid="column"]:nth-child(1){
-              background-color: none;
-          }
-              
-          [data-testid="column"]:nth-child(2){
-              background-color: none;
-          }
-      </style>
-      """, unsafe_allow_html=True
-  )
-  
-  
-  
-  if prompt := bars():
+st.markdown("""
+    <style>
+        [data-testid="column"]:nth-child(1){
+            background-color: none;
+        }
+            
+        [data-testid="column"]:nth-child(2){
+            background-color: none;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+if prompt := bars():
+  if detect(prompt) == "en": 
       # Store and display the current prompt.
       st.session_state.messages.append({"role": "user", "content": prompt})
   
