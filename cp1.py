@@ -256,7 +256,7 @@ def bars():
     with col1: prompt = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
     with col2:
         try:
-            audio_data.clear()
+            # audio_data.clear()
           
             audio_bytes = audio_recorder(
             text="",
