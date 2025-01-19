@@ -165,7 +165,16 @@ st.markdown(
 
         .st-c3 {background:#ab2f2f; background-color: #ab2f2f !important;}
 
-        
+        .stHorizontalBlock.st-emotion-cache-ocqkz7{
+            position: fixed;
+            margin-top: 30%;
+            background-color: #ff4b4b;
+            height: 100px;
+            padding-top: 2%;
+            z-index: 9999;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
         
 
         /* Smartphones (portrait) */
