@@ -1,5 +1,8 @@
 #Chat
 
+import warnings
+warnings.filterwarnings('ignore')
+                                        
 import os
 import streamlit as st
 from openai import OpenAI
@@ -8,6 +11,9 @@ import requests
 import io
 from audio_recorder_streamlit import audio_recorder
 import speech_recognition as speech
+
+showErrorDetails = False
+
 
 listener = speech.Recognizer()
 
@@ -246,7 +252,8 @@ def bars():
     col1, col2 = st.columns([9, 1])
     with col1: prompt = st.chat_input(placeholder="Type Your Question Here or Use Microphone To Tell Through Voice.")
     with col2:
-        audio_bytes = audio_recorder(
+        try:
+            audio_bytes = audio_recorder(
             text="",
             recording_color="red",
             neutral_color="green",
@@ -260,7 +267,9 @@ def bars():
             with speech.AudioFile(audio_file) as source:
                 audio_data = recognizer.record(source)  # Read the entire audio file
                 prompt = recognizer.recognize_google(audio_data).lower()
-                
+
+        except:
+            st.write("Click on Mic Symbol to Talk With Isha.")
     return prompt
 
 
