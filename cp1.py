@@ -176,6 +176,12 @@ st.markdown(
             margin-top: 36%;
             /* margin-left: -100px;
         }
+        @media screen and (max-width: 600px) {
+            .st-emotion-cache-ocqkz7{
+                width:95%;
+            }
+
+        }
         .st-emotion-cache-1vk188h {background-color: rgb(171 47 47) !important; }
 
         .st-c3 {background:#ab2f2f; background-color: #ab2f2f !important;}
