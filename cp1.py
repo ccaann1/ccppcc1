@@ -251,44 +251,47 @@ st.markdown(
 
 
 def bars():
-    col1, col2 = st.columns([8, 2])
-    # prompt.clear()
-    prompt = None
-    with col1: prompt1 = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
-    with col2:
-        # try:
-        # audio_data.clear()
-        audio_bytes = None
-        def audio_recorderr():
-            audio_bytes = audio_recorder(
-              text="",
-              recording_color="red",
-              neutral_color="green",
-              icon_name="microphone",
-              icon_size="2x",
-            )
-            if audio_bytes:
-              # st.write("Prompt taken thru voice...")
-              audio_file = io.BytesIO(audio_bytes)
-              recognizer = speech.Recognizer()
-              with speech.AudioFile(audio_file) as source:
-                  audio_data = recognizer.record(source)  # Read the entire audio file
-                  prompt2 = recognizer.recognize_google(audio_data).lower()
-              
-              # audio_data.clear()
-              audio_data = None
-
-              return prompt2
-
-        
-        prompt2 = audio_recorderr()
+  col1, col2 = st.columns([8, 2])
+  # prompt.clear()
+  prompt = None
+  with col1: prompt1 = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
+  with col2:
+      # try:
+      # audio_data.clear()
+      audio_bytes = None
+      def audio_recorderr():
+          audio_bytes = audio_recorder(
+            text="",
+            recording_color="red",
+            neutral_color="green",
+            icon_name="microphone",
+            icon_size="2x",
+          )
+          if audio_bytes:
+            # st.write("Prompt taken thru voice...")
+            audio_file = io.BytesIO(audio_bytes)
+            recognizer = speech.Recognizer()
+            with speech.AudioFile(audio_file) as source:
+                audio_data = recognizer.record(source)  # Read the entire audio file
+                prompt2 = recognizer.recognize_google(audio_data).lower()
+            
+            # audio_data.clear()
+            audio_data = None
+  
+            return prompt2
+  
       
-    if prompt1 is not None:
-      prompt = prompt1
-    else:
-      prompt = prompt2
-
-
+      prompt2 = audio_recorderr()
+    
+  if prompt1 is not None:
+    prompt = prompt1
+    
+  else:
+    prompt = prompt2
+  
+  st.write(prompt)
+  return prompt
+  
   
 # st.markdown("""
 #     <style>
