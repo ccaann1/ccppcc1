@@ -331,5 +331,6 @@ if prompt := bars():
       st.write("   ")
         
     st.session_state.messages.append({"role": "assistant", "content": response})
+prompt.clear()
 prompt = None
 # del prompt
