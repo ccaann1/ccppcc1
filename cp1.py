@@ -274,7 +274,7 @@ def bars():
                 audio_data = recognizer.record(source)  # Read the entire audio file
                 prompt = recognizer.recognize_google(audio_data).lower()
             
-            audio_data.clear()
+            # audio_data.clear()
             audio_data = None
       
         else:
@@ -333,6 +333,6 @@ if prompt := bars():
       st.write("   ")
         
     st.session_state.messages.append({"role": "assistant", "content": response})
-prompt.clear()
+# prompt.clear()
 prompt = None
 # del prompt
