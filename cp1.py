@@ -171,7 +171,7 @@ st.markdown(
         .stHorizontalBlock.st-emotion-cache-ocqkz7{
             position: fixed;
             margin-top: 22%;
-            background-color: #44c4e0;
+            background-color: #ffffff;
             height: 100px;
             padding-top: 2%;
             width:55%;
@@ -236,7 +236,7 @@ st.markdown(
             .stHorizontalBlock.st-emotion-cache-ocqkz7{
                 position: fixed;
                 margin-top: 13%;
-                background-color: #44c4e0;
+                background-color: #ffffff;
                 height: 100px;
                 padding-top: 2%;
                 z-index: 9999;
