@@ -317,7 +317,7 @@ if prompt := bars():
     # session state.
     with st.chat_message("assistant"):
       response = st.write_stream(stream)
-      # prompt.clear()
+      
 
       st.write("   ")
     
@@ -331,5 +331,5 @@ if prompt := bars():
       st.write("   ")
         
     st.session_state.messages.append({"role": "assistant", "content": response})
-# prompt.clear()
+prompt = None
 # del prompt
