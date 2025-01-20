@@ -259,7 +259,7 @@ def bars():
         # try:
         # audio_data.clear()
         audio_bytes = None
-        def audio_recorder():
+        def audio_recorderr():
             audio_bytes = audio_recorder(
               text="",
               recording_color="red",
@@ -280,8 +280,9 @@ def bars():
 
               return prompt2
       
-        if audio_recorder():
-            prompt = prompt2
+        if st.button("Mic"):
+            prompt = audio_recorderr()
+            # prompt = prompt2
         else:
             prompt = prompt1
     
