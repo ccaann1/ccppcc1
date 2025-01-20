@@ -254,7 +254,7 @@ def bars():
     col1, col2 = st.columns([9, 1])
     # prompt.clear()
     prompt = None
-    with col1: prompt = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
+    with col1: prompt1 = st.chat_input(placeholder="Type or Use Mic To Ask Question.")
     with col2:
         # try:
         # audio_data.clear()
@@ -272,13 +272,18 @@ def bars():
             recognizer = speech.Recognizer()
             with speech.AudioFile(audio_file) as source:
                 audio_data = recognizer.record(source)  # Read the entire audio file
-                prompt = recognizer.recognize_google(audio_data).lower()
+                prompt2 = recognizer.recognize_google(audio_data).lower()
             
             # audio_data.clear()
             audio_data = None
       
         else:
             st.write("Click on Mic Symbol to Talk With Isha.")
+    if len(prompt1) > 0:
+      prompt = prompt1
+    else:
+      prompt = prompt2
+
     return prompt
 
 
