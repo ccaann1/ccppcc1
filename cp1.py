@@ -175,6 +175,7 @@ st.markdown(
             height: 100px;
             padding-top: 2%;
             width:55%;
+            box-shadow: #b4e7f3 1px 1px 1px 1px;
             color:#ffffff;
             z-index: 9999;
             padding-right: 10px;
@@ -198,7 +199,7 @@ st.markdown(
                 padding-right:7px;
                 padding-left:7px;
                 padding-top:20px;
-                # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
+                # box-shadow: #b4e7f3 0px 0px 0px 1px;
                 background-color: #ffffff !important;
                 color:#ffffff;
                 position: fixed;
@@ -237,6 +238,7 @@ st.markdown(
                 position: fixed;
                 margin-top: 13%;
                 background-color: #ffffff;
+                box-shadow: #b4e7f3 1px 1px 1px 1px;
                 height: 100px;
                 padding-top: 2%;
                 z-index: 9999;
