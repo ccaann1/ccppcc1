@@ -289,7 +289,7 @@ def bars():
   else:
     prompt = prompt2
   
-  st.write(prompt)
+  # st.write(prompt)
   return prompt
   
   
