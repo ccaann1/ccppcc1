@@ -280,7 +280,7 @@ def bars():
         else:
             st.write("Click on Mic Symbol to Talk With Isha.")
     
-    if len(prompt2) > 0:
+    if prompt2 is not None:
       prompt = prompt2
     else:
       prompt = prompt1
