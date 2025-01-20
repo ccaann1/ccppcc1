@@ -251,6 +251,14 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("""
+  <style> 
+    .stChatInputContainer > div {
+    background-color: #fff;
+    }
+  </style>
+  """, unsafe_allow_html=True)
+
 
 def bars():
   col1, col2 = st.columns([9, 1])
