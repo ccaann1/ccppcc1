@@ -305,7 +305,7 @@ if prompt := bars():
         
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4-turbo",
         messages=[
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
