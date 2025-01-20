@@ -280,7 +280,7 @@ def bars():
 
               return prompt2
       
-        if audio_bytes: = audio_recorder()
+        if audio_recorder():
             prompt = prompt2
         else:
             prompt = prompt1
