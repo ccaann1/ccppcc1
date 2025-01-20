@@ -279,14 +279,14 @@ def bars():
               audio_data = None
 
               return prompt2
+
+        
+        prompt2 = audio_recorderr()
       
-        if st.button("Mic"):
-            prompt = audio_recorderr()
-            # prompt = prompt2
-        else:
-            prompt = prompt1
-    
-    return prompt
+    if prompt1 is not None:
+      prompt = prompt1
+    else:
+      prompt = prompt2
 
 
   
