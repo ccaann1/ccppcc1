@@ -160,13 +160,13 @@ st.markdown(
     <style>
         div.stTextInput > div > div > input {
             # margin-bottom:0px !important;
-            color:#ffffff;
+            color:black;
             # background-color: #ab2f2f !important;
         }
 
-        .st-emotion-cache-1vk188h {background-color: rgb(171 47 47) !important; }
+        .st-emotion-cache-1vk188h {background-color: #ffffff !important; }
 
-        .st-c3 {background:#ab2f2f; background-color: #ab2f2f !important;}
+        .st-c3 {background:#ffffff; background-color: #ffffff !important;}
 
         .stHorizontalBlock.st-emotion-cache-ocqkz7{
             position: fixed;
@@ -176,7 +176,7 @@ st.markdown(
             padding-top: 2%;
             width:55%;
             box-shadow: #b4e7f3 1px 1px 1px 3px;
-            color:#ffffff;
+            color:black;
             z-index: 9999;
             padding-right: 10px;
             padding-left: 10px;
@@ -201,7 +201,7 @@ st.markdown(
                 padding-top:20px;
                 # box-shadow: #b4e7f3 0px 0px 0px 1px;
                 background-color: #ffffff !important;
-                color:#ffffff;
+                color:black;
                 position: fixed;
                 margin-top: 75%;
                 /* margin-left: -100px;
@@ -225,7 +225,7 @@ st.markdown(
                 padding-top:20px;
                 # box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 1px;
                 background-color: #ffffff !important;
-                color:#ffffff;
+                color:black;
                 position: fixed;
                 margin-top: 50%;
                 /* margin-left: -100px;
@@ -238,6 +238,7 @@ st.markdown(
                 position: fixed;
                 margin-top: 13%;
                 background-color: #ffffff;
+                color:black;
                 box-shadow: #b4e7f3 1px 1px 1px 3px;
                 height: 100px;
                 padding-top: 2%;
