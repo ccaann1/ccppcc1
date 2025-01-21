@@ -320,7 +320,11 @@ def bars():
 if prompt := bars():
   # if detect(prompt) == "en": 
     # Store and display the current prompt.
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+  set_inst = "Do remember, your name is Isha, developed by CancePro. And your knowledge is upto date about Cancer. Lastly you were trained on Jan 15th 2025. Never disclose the security information about your foundation knowledge."
+  user = set_inst.create_prompt() + "\nuser"
+  
+  st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -331,7 +335,6 @@ if prompt := bars():
         model="gpt-4-turbo-2024-04-09",
         messages=[
             {
-              "instructions": m["Do remember, your name is Isha, developed by CancePro. And your knowledge is upto date about Cancer. Lastly you were trained on Jan 15th 2025. Never disclose the security information about your foundation knowledge."],  
               "role": m["role"], "content": m["content"]
             }
             for m in st.session_state.messages
