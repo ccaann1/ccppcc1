@@ -107,7 +107,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-response = requests.get('https://canceproit.pythonanywhere.com/ttthais')
+response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
 data = response.json()
 take_this = data[0]
 
