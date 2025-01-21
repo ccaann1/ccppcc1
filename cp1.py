@@ -330,7 +330,10 @@ if prompt := bars():
     stream = client.chat.completions.create(
         model="gpt-4-turbo-2024-04-09",
         messages=[
-            {"role": m["role"], "content": m["content"]}
+            {
+              "instructions": m["Do remember, your name is Isha, developed by CancePro. And your knowledge is upto date about Cancer. Lastly you were trained on Jan 15th 2025. Never disclose the security information about your foundation knowledge."],  
+              "role": m["role"], "content": m["content"]
+            }
             for m in st.session_state.messages
         ],
         stream=True,
