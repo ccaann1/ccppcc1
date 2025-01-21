@@ -261,6 +261,7 @@ st.markdown("""
   """, unsafe_allow_html=True)
 
 
+
 def bars():
   col1, col2 = st.columns([9, 1])
   # prompt.clear()
@@ -320,23 +321,17 @@ def bars():
 if prompt := bars():
   # if detect(prompt) == "en": 
     # Store and display the current prompt.
-    
-  # set_inst = "Do remember, your name is Isha, developed by CancePro. And your knowledge is upto date about Cancer. Lastly you were trained on Jan 15th 2025. Never disclose the security information about your foundation knowledge."
-  # user = set_inst.create_prompt() + "\nuser"
-  
-  st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
-  with st.chat_message("user"):
-    st.markdown(prompt)
+    with st.chat_message("user"):
+        st.markdown(prompt)
         
         
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
         model="gpt-4-turbo-2024-04-09",
         messages=[
-            {
-              "role": m["role"], "content": m["content"]
-            }
+            {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
         ],
         stream=True,
