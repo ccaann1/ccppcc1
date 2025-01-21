@@ -329,7 +329,7 @@ if prompt := bars():
         
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
-        model="gpt-4-turbo-2024-04-09",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a helpful assistant. You are lastly trained in January 2025. Your name is Isha developed by CancePro. CancePro is to find Cancer Probability in Food Using AI"},
         ]
