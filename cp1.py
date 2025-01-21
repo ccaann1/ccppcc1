@@ -331,7 +331,6 @@ if prompt := bars():
     stream = client.chat.completions.create(
         model="gpt-4-turbo-2024-04-09",
         messages=[
-            {"role": m["system"], "content": m["You are a helpful assistant that provides detailed explanations."]},
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
         ],
