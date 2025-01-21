@@ -326,8 +326,8 @@ if prompt := bars():
   
   st.session_state.messages.append({"role": "user", "content": prompt})
 
-    with st.chat_message("user"):
-        st.markdown(prompt)
+  with st.chat_message("user"):
+    st.markdown(prompt)
         
         
     # Generate a response using the OpenAI API.
