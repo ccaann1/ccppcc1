@@ -331,6 +331,9 @@ if prompt := bars():
     stream = client.chat.completions.create(
         model="gpt-4-turbo-2024-04-09",
         messages=[
+            {"role": "system", "content": "You are a helpful assistant. You are lastly trained in January 2025. Your name is Isha developed by CancePro. CancePro is to find Cancer Probability in Food Using AI"},
+        ]
+        +[
             {"role": m["role"], "content": m["content"]}
             for m in st.session_state.messages
         ],
