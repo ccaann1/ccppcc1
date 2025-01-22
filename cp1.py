@@ -317,8 +317,8 @@ def bars():
 #     </style>
 #     """, unsafe_allow_html=True
 # )
-
-if prompt := bars():
+prompt = bars()
+if prompt:
   # if detect(prompt) == "en": 
     # Store and display the current prompt.
     st.session_state.messages.append({"role": "user", "content": prompt})
