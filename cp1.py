@@ -272,15 +272,15 @@ def bars():
       # audio_data.clear()
       audio_bytes = None
       def audio_recorderr():
-          audio_bytes = audio_recorder(
-            text="",
-            recording_color="red",
-            neutral_color="green",
-            icon_name="microphone",
-            icon_size="2x",
-          )
-          if audio_bytes:
-            try:
+          try:
+            audio_bytes = audio_recorder(
+              text="",
+              recording_color="red",
+              neutral_color="green",
+              icon_name="microphone",
+              icon_size="2x",
+            )
+            if audio_bytes:
               # st.write("Prompt taken thru voice...")
               audio_file = io.BytesIO(audio_bytes)
               recognizer = speech.Recognizer()
@@ -290,11 +290,13 @@ def bars():
               
               # audio_data.clear()
               audio_data = None
-            except:
-              st.write('I am Ready to take input. Click again on Microphone.')
+            return prompt2
             
-          return prompt2
-  
+          except:
+            st.write('I am Ready to take input. Click again on Microphone.')
+            
+          
+        
       
       prompt2 = audio_recorderr()
     
