@@ -293,7 +293,8 @@ def bars():
             return prompt2
             
           except:
-            st.write('I am Ready to take input. Click again on Microphone.')
+            pass
+            # st.write('I am Ready to take input. Click again on Microphone.')
             
           
         
