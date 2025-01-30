@@ -315,6 +315,7 @@ if get_this_id:
 
         if prompt:
             user_q_lang = detect(prompt)
+            st.write(user_q_lang)
             if user_q_lang == 'en':
                 now_get_this_id = 'English'
 
@@ -326,7 +327,8 @@ if get_this_id:
 
             else:
                 st.write('We are working on increasing our Language base. Will help you too in coming days.')
-            
+
+            st.write(now_get_this_id)
             # if detect(prompt) == "en": 
             # Store and display the current prompt.
             st.session_state.messages.append({"role": "user", "content": prompt})
