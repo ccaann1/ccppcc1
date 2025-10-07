@@ -107,7 +107,22 @@ if get_this_id:
     
     if get_this_id == 'english' or get_this_id == 'spanish' or get_this_id == 'hindi':	
         response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
-        data = response.json()
+        try:
+            response = requests.get(url, headers=headers, timeout=10)  # or requests.post(...)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as http_err:
+            print(f"HTTP error occurred: {http_err}")
+        except requests.exceptions.RequestException as req_err:
+            print(f"Request error occurred: {req_err}")
+
+
+        try:
+            data = response.json()
+        except requests.exceptions.JSONDecodeError:
+            print("Error: Response is not valid JSON.")
+            print("Raw Response Text:", response.text)
+            data = None  # Optional: handle downstream logic gracefully
+            
         take_this = data[0]
         # Show title and description.
         if get_this_id == 'english':
