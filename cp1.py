@@ -106,7 +106,8 @@ if get_this_id:
     get_this_id = get_this_id.lower()
     
     if get_this_id == 'english' or get_this_id == 'spanish' or get_this_id == 'hindi':	
-        response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
+        url = 'https://canceproit.pythonanywhere.com/hereignore'
+        # response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
         try:
             response = requests.get(url, headers=headers, timeout=10)  # or requests.post(...)
             response.raise_for_status()
