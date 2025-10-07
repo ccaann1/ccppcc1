@@ -109,7 +109,7 @@ if get_this_id:
         url = 'https://canceproit.pythonanywhere.com/hereignore'
         # response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
         try:
-            response = requests.get(url, headers=headers, timeout=10)  # or requests.post(...)
+            response = requests.get(url, timeout=10)  # or requests.post(...)
             response.raise_for_status()
         except requests.exceptions.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
