@@ -106,8 +106,8 @@ if get_this_id:
     get_this_id = get_this_id.lower()
     
     if get_this_id == 'english' or get_this_id == 'spanish' or get_this_id == 'hindi':	
-        url = 'https://canceproit.pythonanywhere.com/hereignore'
-        # response = requests.get('https://canceproit.pythonanywhere.com/hereignore')
+        url = 'https://bhk954.pythonanywhere.com/notworthhere'
+        # response = requests.get('')
         try:
             response = requests.get(url, timeout=10)  # or requests.post(...)
             response.raise_for_status()
@@ -119,12 +119,12 @@ if get_this_id:
 
         try:
             if 'application/json' in response.headers.get('Content-Type', ''):
-                data = response.json()
-                if isinstance(data, list) and len(data) > 0:
-                    take_this = data[0]
-                else:
-                    st.error("Unexpected response format: expected a non-empty list.")
-                    st.stop()
+                take_this = response.json()
+                # if isinstance(data, list) and len(data) > 0:
+                #     take_this = data
+                # else:
+                #     st.error("Unexpected response format: expected a non-empty list.")
+                #     st.stop()
             else:
                 st.error("API did not return JSON. Content-Type: " + response.headers.get('Content-Type', 'unknown'))
                 st.stop()
