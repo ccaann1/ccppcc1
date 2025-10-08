@@ -118,13 +118,20 @@ if get_this_id:
 
 
         try:
-            data = response.json()
-        except requests.exceptions.JSONDecodeError:
-            print("Error: Response is not valid JSON.")
-            print("Raw Response Text:", response.text)
-            data = None  # Optional: handle downstream logic gracefully
-            
-        take_this = data[0]
+            if 'application/json' in response.headers.get('Content-Type', ''):
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    take_this = data[0]
+                else:
+                    st.error("Unexpected response format: expected a non-empty list.")
+                    st.stop()
+            else:
+                st.error("API did not return JSON. Content-Type: " + response.headers.get('Content-Type', 'unknown'))
+                st.stop()
+        except Exception as e:
+            st.error(f"Failed to process API response: {e}")
+            st.stop()
+
         # Show title and description.
         if get_this_id == 'english':
             E_Main_Head = "Hi, I am Isha!!!"
