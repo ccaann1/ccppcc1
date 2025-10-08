@@ -107,10 +107,11 @@ if get_this_id:
     
     if get_this_id == 'english' or get_this_id == 'spanish' or get_this_id == 'hindi':	
         url = 'https://bhk954.pythonanywhere.com/notworthhere'
-        # response = requests.get('')
+        
         try:
             response = requests.get(url, timeout=10)  # or requests.post(...)
-            take_this = response.json()
+            response.raise_for_status()
+            take_this = response.text  # Use .text instead of .json()
         except requests.exceptions.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
         except requests.exceptions.RequestException as req_err:
