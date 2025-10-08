@@ -348,7 +348,7 @@ if get_this_id:
                 
             # Generate a response using the OpenAI API.
             stream = client.chat.completions.create(
-                model="gpt-5-pro",
+                model="gpt-5-2025-08-07",
                 messages=[
                     {
                         "role": "system",
