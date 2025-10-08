@@ -110,27 +110,12 @@ if get_this_id:
         # response = requests.get('')
         try:
             response = requests.get(url, timeout=10)  # or requests.post(...)
-            response.raise_for_status()
+            take_this = response.json()
         except requests.exceptions.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
         except requests.exceptions.RequestException as req_err:
             print(f"Request error occurred: {req_err}")
 
-
-        try:
-            if 'application/json' in response.headers.get('Content-Type', ''):
-                take_this = response.json()
-                # if isinstance(data, list) and len(data) > 0:
-                #     take_this = data
-                # else:
-                #     st.error("Unexpected response format: expected a non-empty list.")
-                #     st.stop()
-            else:
-                st.error("API did not return JSON. Content-Type: " + response.headers.get('Content-Type', 'unknown'))
-                st.stop()
-        except Exception as e:
-            st.error(f"Failed to process API response: {e}")
-            st.stop()
 
         # Show title and description.
         if get_this_id == 'english':
