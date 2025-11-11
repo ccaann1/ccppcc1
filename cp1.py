@@ -138,8 +138,7 @@ if get_this_id:
 
         st.write(E_Sub_Text)
 
-        os.environ["OPENAI_API_KEY"] = take_this
-        api_key = take_this
+        api_key = os.environ["OPENAI_API_KEY"]
 
         # Create an OpenAI client.
         client = OpenAI()
