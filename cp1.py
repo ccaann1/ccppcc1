@@ -10,8 +10,7 @@ import io
 from audio_recorder_streamlit import audio_recorder
 import speech_recognition as speech
 from langdetect import detect
-from dotenv import load_dotenv
-load_dotenv()
+
 
 showErrorDetails = False
 
