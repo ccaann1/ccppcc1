@@ -107,18 +107,6 @@ if get_this_id:
     get_this_id = get_this_id.lower()
     
     if get_this_id == 'english' or get_this_id == 'spanish' or get_this_id == 'hindi':	
-        url = 'https://bhk954.pythonanywhere.com/notworthhere'
-        
-        try:
-            response = requests.get(url, timeout=10)  # or requests.post(...)
-            response.raise_for_status()
-            take_this = response.text  # Use .text instead of .json()
-        except requests.exceptions.HTTPError as http_err:
-            print(f"HTTP error occurred: {http_err}")
-        except requests.exceptions.RequestException as req_err:
-            print(f"Request error occurred: {req_err}")
-
-
         # Show title and description.
         if get_this_id == 'english':
             E_Main_Head = "Hi, I am Isha!!!"
@@ -139,10 +127,8 @@ if get_this_id:
 
         st.write(E_Sub_Text)
 
-        api_key = os.environ["OPENAI_API_KEY"]
-
         # Create an OpenAI client.
-        client = OpenAI()
+        client = OpenAI(api_key = os.environ["OPENAI_API_KEY"])
 
         # Create a session state variable to store the chat messages. This ensures that the
         # messages persist across reruns.
